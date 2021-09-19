@@ -5,8 +5,8 @@ const NavBar = ({search, searchRating}) => {
     return (
         <>
             <nav className="navbar container-fluid header p-3 ">
-                <div className="container-fluid">
-                    <div>
+                <div className="container-fluid link">
+                    <div className="text">
                         <a href="#" className="navbar-brand">FILMS</a>
                     </div>
                     <form className="d-flex">

@@ -1,14 +1,21 @@
 .box{
-  width: 370px;
+  width: 380px;
   height: 220px;
-  margin: 0 5px;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 .box:hover .video{
   transform: scale(1.1);
+  box-shadow: 0 0 7px rgba(56, 53, 53, 0.521);
 }
 
 .video{
   transition: .3s ease-in-out;
+}
+
+@media screen and (max-width: 572px)
+{
+  .box{
+    width: 100%;
+  }
 }

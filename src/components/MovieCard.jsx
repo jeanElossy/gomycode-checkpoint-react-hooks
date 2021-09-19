@@ -5,13 +5,13 @@ const MovieCard = ({film}) => {
   
   return (
     <>
-      <div className="col-12 box position-relative ">
+      <div className="col-12 box position-relative">
         <Player 
           url={film.urlFilm}
           controls={true}
           poster={film.urlPoster}
           muted={true}
-          className="video"
+          className="video w-100 h-100"
           BigPlayButton={true}
         />
         <div className="d-flex mt-3 justify-content-between">
