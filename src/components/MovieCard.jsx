@@ -12,9 +12,9 @@ const MovieCard = ({film}) => {
           <div className="description">{film.description}</div>
         </div>
         <ReactPlayer 
-          url={film.videoUrl}
+          url={film.urlFilm}
           controls={true}
-          poster={film.posterURL}
+          poster={film.urlPoster}
           muted={true}
           className="video w-100 h-100 rounded"
         />

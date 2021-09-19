@@ -3,16 +3,14 @@ import React from 'react'
 const NavBar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg p-3 header container-fluid">
-                <div className="container-fluid">
+            <nav class="navbar container-fluid header p-3 ">
+                <div class="container-fluid">
                     <div>
-                        <a className="navbar-brand" href="#" >FILMS</a>
+                        <a className="navbar-brand">FILMS</a>
                     </div>
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <form>
-                            <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                        </form>
-                    </div>
+                    <form className="d-flex">
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    </form>
                 </div>
             </nav>
         </>
