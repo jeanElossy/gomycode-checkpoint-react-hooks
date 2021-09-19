@@ -74,6 +74,12 @@ const MovieList = () => {
       }
     ]
   );
+  
+  const [filter, setFiletr] = useState("");
+  const handleSearch = (e) => {
+    setFiletr(e.target.value)
+  }
+
 
   const handleAdd = (film) => {
     const newFilms = [...films];
@@ -83,13 +89,15 @@ const MovieList = () => {
   }
 
 
+
   return (
     <div>
-      <NavBar />
+      <NavBar search={handleSearch}/>
       <AddCard add={handleAdd} />
       <div className="container">
         <div className="row">
           {films
+            .filter((film) => film.title.toLowerCase().includes(filter.toLocaleLowerCase()))
             .sort((a, b) => b.id - a.id)
             .map((film) => (
             <MovieCard film={film} key={film.id} />

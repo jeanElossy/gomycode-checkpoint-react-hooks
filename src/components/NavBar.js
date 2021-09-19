@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NavBar = () => {
+const NavBar = ({search}) => {
     return (
         <>
             <nav class="navbar container-fluid header p-3 ">
@@ -9,7 +9,7 @@ const NavBar = () => {
                         <a className="navbar-brand">FILMS</a>
                     </div>
                     <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={search}/>
                     </form>
                 </div>
             </nav>
