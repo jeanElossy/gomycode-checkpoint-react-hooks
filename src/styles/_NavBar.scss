@@ -3,4 +3,11 @@
     box-shadow: 5px 0 10px rgb(110, 109, 109);
     position: fixed;
     z-index: 5;
+    form{
+        input{
+            &::placeholder{
+                font-style: italic;
+            }
+        }
+    }
 }

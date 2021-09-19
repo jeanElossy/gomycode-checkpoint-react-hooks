@@ -74,12 +74,17 @@ const MovieList = () => {
       }
     ]
   );
-  
-  const [filter, setFiletr] = useState("");
+
+  const [filter, setFilter] = useState("");
   const handleSearch = (e) => {
-    setFiletr(e.target.value)
+    setFilter(e.target.value)
   }
 
+  const [num, setNum] = useState(0);
+  const handleRating = (e) =>{
+    setNum(e.target.value);
+  }
+  console.log(num);
 
   const handleAdd = (film) => {
     const newFilms = [...films];
@@ -87,17 +92,17 @@ const MovieList = () => {
 
     setFilms(newFilms)
   }
-
-  console.log(films)
-
-
   return (
     <div>
-      <NavBar search={handleSearch}/>
+      <NavBar 
+        search={handleSearch}
+        searchRating={handleRating}
+      />
       <AddCard add={handleAdd} />
       <div className="container">
         <div className="row">
           {films
+            .filter(item => item.rating.length !== num)
             .filter((film) => film.title.toLowerCase().includes(filter.toLocaleLowerCase()))
             .sort((a, b) => b.id - a.id)
             .map((film) => (

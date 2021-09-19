@@ -10,13 +10,7 @@ const AddCard = ({add}) =>{
     
     const handleIncrement = (e) => {
         e.preventDefault();
-        if(increment < 5){
-            setIncrement(increment + 1)
-            console.log(increment)
-        }else{
-            setIncrement(increment)
-            console.log(increment)
-        }
+        (increment < 5 ? setIncrement(increment + 1) : setIncrement(increment))
     }
 
     const handleSubmit = (e) =>{
@@ -39,8 +33,7 @@ const AddCard = ({add}) =>{
         setDescription("")
         setUrlPoster("")
         setUrlFilm("")
-        setIncrement(0);
-        
+        setIncrement(0)
     }
 
     return (
