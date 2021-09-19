@@ -11,9 +11,9 @@ const AddCard = () =>{
         }
     }
 
-
     return (
-        <div className="add__film container">
+        <div className="add__film container mb-4">
+            <h1 className="h2 text-center">Ajouter un film a la liste</h1>
             <form className="row g-3 needs-validation" novalidate>
                 <div className="col-md-6 position-relative">
                     <input type="text" className="form-control" id="validationTooltip01" placeholder=" Le titre de votre film" required/>
@@ -38,7 +38,7 @@ const AddCard = () =>{
                 <div className="d-flex align-items-center mb-2 justify-content-between">
                     <div className="d-flex align-items-center mb-2">
                         <button className="btn btn-success" onClick={handleIncrement}>Evaluer</button>
-                        <div> Evaluer votre <span>{increment}</span>/5 </div>
+                        <div>&nbsp;Evaluer votre <span>{increment}</span>/5 </div>
                     </div>
                     <input type="submit" value="Ajouter un film" className="btn btn-outline-primary"/>
                 </div>

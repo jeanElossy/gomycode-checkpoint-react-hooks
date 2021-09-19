@@ -2,8 +2,8 @@ import React from 'react'
 
 const NavBar = () => {
     return (
-        <div className="header">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3 p-3">
+        <>
+            <nav className="navbar navbar-expand-lg p-3 header container-fluid">
                 <div className="container-fluid">
                     <div>
                         <a className="navbar-brand" href="#" >FILMS</a>
@@ -15,8 +15,7 @@ const NavBar = () => {
                     </div>
                 </div>
             </nav>
-
-        </div>
+        </>
     )
 }
 export default NavBar;
