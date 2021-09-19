@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MovieCard from './MovieCard';
 import NavBar from './NavBar';
 import AddCard from './AddCard';
@@ -84,7 +84,7 @@ const MovieList = () => {
   const handleRating = (e) =>{
     setNum(e.target.value);
   }
-  console.log(num);
+  console.log(num.toString());
 
   const handleAdd = (film) => {
     const newFilms = [...films];
@@ -92,17 +92,31 @@ const MovieList = () => {
 
     setFilms(newFilms)
   }
+
+  // useEffect(()=> {
+  //   let newFilms = [...films];
+  //   switch(filter) {
+  //     case "title" : newFilms.filter((film) => film.title.toLocaleLowerCase().includes(filter.toLocaleLowerCase()));
+  //       break;
+  //     case "rating" : newFilms.filter((film) => film.rating.toString().includes(filter.toString()));
+  //       break;
+  //     default : setFilms(newFilms);
+  //   }
+  //   setFilms(newFilms);
+  // }, [filter]) 
+
+
   return (
     <div>
       <NavBar 
         search={handleSearch}
         searchRating={handleRating}
+        // search={handleFilter}
       />
       <AddCard add={handleAdd} />
       <div className="container">
         <div className="row">
           {films
-            .filter(item => item.rating.length !== num)
             .filter((film) => film.title.toLowerCase().includes(filter.toLocaleLowerCase()))
             .sort((a, b) => b.id - a.id)
             .map((film) => (
