@@ -45,7 +45,7 @@ const AddCard = ({add}) =>{
 
     return (
         <div className="add__film container mb-4">
-            <h1 className="h2 text-center mb-4">Ajouter un film a la liste</h1>
+            <h1 className="text-center mb-4 text-decoration-underline">Ajouter un film</h1>
             <form className="row g-3">
                 <div className="col-md-6 position-relative">
                     <input 

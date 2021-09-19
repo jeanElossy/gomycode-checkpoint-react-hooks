@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactPlayer from "react-player";
+import { Player } from "video-react";
 
 
 const MovieCard = ({film}) => {
@@ -7,13 +7,15 @@ const MovieCard = ({film}) => {
   return (
     <>
       <div className="col-12 box position-relative" style={{}}>
-        <ReactPlayer 
+        <Player 
           url={film.urlFilm}
           controls={true}
           poster={film.urlPoster}
           muted={true}
-          className="video w-100 h-100"
-          showPreview={false}
+          className="video"
+          // showPreview={false}
+          // LoadingSpinner={true}
+          // BigPlayButton={true}
         />
         <div className="d-flex mt-3 justify-content-between">
           <h1 className="h5">{film.title}</h1>
