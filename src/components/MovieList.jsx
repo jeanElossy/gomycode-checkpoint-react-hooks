@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import MovieCard from './MovieCard';
 import NavBar from './NavBar';
 import AddCard from './AddCard';
@@ -88,6 +88,7 @@ const MovieList = () => {
     setFilms(newFilms)
   }
 
+  console.log(films)
 
 
   return (

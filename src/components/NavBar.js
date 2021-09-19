@@ -6,7 +6,7 @@ const NavBar = ({search}) => {
             <nav class="navbar container-fluid header p-3 ">
                 <div class="container-fluid">
                     <div>
-                        <a className="navbar-brand">FILMS</a>
+                        <a href="#" className="navbar-brand">FILMS</a>
                     </div>
                     <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={search}/>

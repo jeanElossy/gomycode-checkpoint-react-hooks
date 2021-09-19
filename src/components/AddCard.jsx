@@ -89,10 +89,10 @@ const AddCard = ({add}) =>{
                         />
                     </div>
                 </div>
-                <div className="d-flex align-items-center mb-2 justify-content-between">
+                <div className="d-flex align-items-center mb-2 justify-content-between flex-xs-column">
                     <div className="d-flex align-items-center mb-2">
                         <button className="btn btn-success" onClick={handleIncrement}>Evaluer</button>
-                        <div>&nbsp; Note: <span onChange={() => console.log(increment.children)}>{increment}</span>/5 </div>
+                        <div>&nbsp; Note: <span>{increment}</span>/5 </div>
                     </div>
                     <input type="submit" value="Ajouter un film" className="btn btn-outline-primary" onClick={handleSubmit} />
                 </div>
