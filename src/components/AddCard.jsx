@@ -8,23 +8,39 @@ const AddCard = ({add}) =>{
     const [urlPoster, setUrlPoster] = useState("");
     const [urlFilm, setUrlFilm] = useState("");
     
-    const handleIncrement = () => {
+    const handleIncrement = (e) => {
+        e.preventDefault();
         if(increment < 5){
             setIncrement(increment + 1)
+            console.log(increment)
         }else{
             setIncrement(increment)
+            console.log(increment)
         }
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        add({
+        (title === "" 
+            || description === "" 
+            || urlPoster === "" 
+            || urlFilm === ""
+            || increment === 0
+        ) ? alert("Veuillez renseigner tous les champs") : (
+            add({
             id: new Date().getTime(),
             title,
             description,
             urlPoster,
-            urlFilm
-        })
+            urlFilm,
+            increment
+        }))
+        setTitle("")
+        setDescription("")
+        setUrlPoster("")
+        setUrlFilm("")
+        setIncrement(0);
+        
     }
 
     return (
@@ -36,8 +52,8 @@ const AddCard = ({add}) =>{
                         type="text" 
                         className="form-control" 
                         placeholder="Le titre de votre film" 
-                        required
                         onChange={(e) => setTitle(e.target.value)}
+                        value={title}
                     />
                 </div>
                 <div className="col-md-6 position-relative">
@@ -45,8 +61,8 @@ const AddCard = ({add}) =>{
                         type="text" 
                         className="form-control"
                         placeholder="La descrption de votre film" 
-                        required
                         onChange={(e) => setDescription(e.target.value)}
+                        value={description}
                     />
                 </div>
                 <div className="d-md-flex gap-3">
@@ -58,6 +74,7 @@ const AddCard = ({add}) =>{
                             className="form-control" 
                             placeholder="Inserer url de votre poster"
                             onChange={(e) => setUrlPoster(e.target.value)}
+                            value={urlPoster}
                         />
                     </div>
                     <div class="input-group mb-3">
@@ -68,13 +85,14 @@ const AddCard = ({add}) =>{
                             className="form-control" 
                             placeholder="Inserer url de votre film"
                             onChange={(e) => setUrlFilm(e.target.value)}
+                            value={urlFilm}
                         />
                     </div>
                 </div>
                 <div className="d-flex align-items-center mb-2 justify-content-between">
                     <div className="d-flex align-items-center mb-2">
                         <button className="btn btn-success" onClick={handleIncrement}>Evaluer</button>
-                        <div>&nbsp;Evaluer votre <span>{increment}</span>/5 </div>
+                        <div>&nbsp; Note: <span onChange={() => console.log(increment.children)}>{increment}</span>/5 </div>
                     </div>
                     <input type="submit" value="Ajouter un film" className="btn btn-outline-primary" onClick={handleSubmit} />
                 </div>

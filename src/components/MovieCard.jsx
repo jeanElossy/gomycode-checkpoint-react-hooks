@@ -7,17 +7,19 @@ const MovieCard = ({film}) => {
   return (
     <>
       <div className="col-12 col-md-6 box position-relative">
-        <div className="overlay d-none">
-          <h1 className="h5">{film.title}</h1> 
-          <div className="description">{film.description}</div>
-        </div>
         <ReactPlayer 
           url={film.urlFilm}
           controls={true}
           poster={film.urlPoster}
           muted={true}
-          className="video w-100 h-100 rounded"
+          className="video w-100 h-100"
         />
+        <div className="d-flex mt-3 justify-content-between">
+          <h1 className="h5">{film.title}</h1>
+          {film.increment === 0 ? 
+            <span>{film.increment}/5</span> : <span>{film.rating}/5</span>
+          }
+        </div>
       </div>
     </>
   );
